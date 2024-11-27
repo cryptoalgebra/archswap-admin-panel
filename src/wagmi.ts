@@ -6,11 +6,11 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 
 import { publicProvider } from 'wagmi/providers/public'
 
-const superseed = defineChain({
-  id: 53302,
-  name: 'Superseed',
-  network: 'superseed-sepolia',
-  nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
+const botanix = defineChain({
+  id: 3636,
+  name: 'Botanix Testnet',
+  network: 'botanix-testnet',
+  nativeCurrency: { name: 'BTC', symbol: 'BTC', decimals: 18 },
   rpcUrls: {
     default: {
       http: [import.meta.env.VITE_INFURA_RPC],
@@ -21,8 +21,8 @@ const superseed = defineChain({
   },
   blockExplorers: {
     default: {
-      name: 'superseedExplorer',
-      url: 'https://sepolia-explorer.superseed.xyz/',
+      name: 'botanixExplorer',
+      url: 'https://testnet.botanixscan.io/',
     },
   },
   testnet: true,
@@ -30,7 +30,7 @@ const superseed = defineChain({
 
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
-  [superseed],
+  [botanix],
   [
     publicProvider(),
   ],
